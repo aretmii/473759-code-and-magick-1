@@ -6,7 +6,7 @@ var CLOUD_Y = 10;
 var GAP = 10;
 var BAR_GAP = 40;
 var BAR_WIDTH = 40;
-var BAR_HEIGHT = -(CLOUD_HEIGHT - 2*BAR_GAP - 2*FONT_HEIGHT - GAP);
+var BAR_HEIGHT = - (CLOUD_HEIGHT - 2 * BAR_GAP - 2 * FONT_HEIGHT - GAP);
 
 var renderCloud = function(ctx, x, y, color) {
   ctx.fillStyle = color;
@@ -19,7 +19,7 @@ var renderCloud = function(ctx, x, y, color) {
 };
 
 // ВЫЧИСЛЕНИЕ МАКСИМАЛЬНОГО ЗНАЧЕНИЯ ЭЛЕМЕНТА МАССИВА getMaxElement
-var getMaxElement = function(arr) {
+var getMaxElement = function (arr) {
   var maxElement = arr[0];
 
   for (var i = 0; i < arr.length; i++) {
@@ -31,7 +31,7 @@ var getMaxElement = function(arr) {
   return maxElement;
 };
 
-window.renderStatistics = function(ctx, players, times) {
+window.renderStatistics = function (ctx, players, times) {
   renderCloud(ctx, CLOUD_X + GAP, CLOUD_Y + GAP, 'rgba(0, 0, 0, 0.7)');
   renderCloud(ctx, CLOUD_X, CLOUD_Y, '#fff');
 
@@ -40,20 +40,20 @@ window.renderStatistics = function(ctx, players, times) {
   var redColor = 'rgba(255, 0, 0, 1)';
   var blueColor = 'rgba(0, 0, 255, 1)';
 
-  var getColor = function (colors) {
-    if (players[i] === 'Вы') {
+  var getColor = function () {
+    if (players[var i] === 'Вы') {
       return redColor;
     }
-      return blueColor;
-  }
+    return blueColor;
+  };
 
-  for (i=0; i < players.length; i++) {
+  for (var i = 0; i < players.length; i++) {
     ctx.fillStyle = '#000';
-    ctx.fillText(Math.round(times[i]), CLOUD_X + BAR_GAP + (BAR_WIDTH + BAR_GAP) * i, CLOUD_HEIGHT - 2*GAP - FONT_HEIGHT - ((BAR_HEIGHT * times[i]) / maxTime)*(-1));
+    ctx.fillText(Math.round(times[i]), CLOUD_X + BAR_GAP + (BAR_WIDTH + BAR_GAP) * i, CLOUD_HEIGHT - 2 * GAP - FONT_HEIGHT - ((BAR_HEIGHT * times[i]) / maxTime)  * (-1));
     ctx.fillStyle = '#000';
     ctx.fillText(players[i], CLOUD_X + BAR_GAP + (BAR_WIDTH + BAR_GAP) * i, CLOUD_HEIGHT - GAP);
 
     ctx.fillStyle = getColor();
-    ctx.fillRect(CLOUD_X + BAR_GAP  + (BAR_WIDTH + BAR_GAP) * i, CLOUD_HEIGHT - GAP - FONT_HEIGHT, BAR_WIDTH, (BAR_HEIGHT * times[i]) / maxTime);
+    ctx.fillRect(CLOUD_X + BAR_GAP + (BAR_WIDTH + BAR_GAP) * i, CLOUD_HEIGHT - GAP - FONT_HEIGHT, BAR_WIDTH, (BAR_HEIGHT * times[i]) / maxTime);
   }
 };
