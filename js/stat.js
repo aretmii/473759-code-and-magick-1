@@ -41,7 +41,7 @@ window.renderStatistics = function (ctx, players, times) {
   var blueColor = 'rgba(0, 0, 255, 1)';
 
   var getColor = function () {
-    if (players[var i] === 'Вы') {
+    if (players[i] === 'Вы') {
       return redColor;
     }
     return blueColor;
