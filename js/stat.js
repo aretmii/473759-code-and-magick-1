@@ -18,7 +18,6 @@ var renderCloud = function(ctx, x, y, color) {
   ctx.fillText('Список результатов:', 120, 70);
 };
 
-// ВЫЧИСЛЕНИЕ МАКСИМАЛЬНОГО ЗНАЧЕНИЯ ЭЛЕМЕНТА МАССИВА getMaxElement
 var getMaxElement = function (arr) {
   var maxElement = arr[0];
 
