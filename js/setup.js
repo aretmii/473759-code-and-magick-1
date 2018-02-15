@@ -52,16 +52,6 @@ for (var i = 0; i < 4; i++) {
   similarListElement.appendChild(wizardElement);
 }
 
-
-
-
-
-
-
-
-
-
-
 //module4-task1 Взаимодействие с пользователем (открытие закрытие окна setup)
 //-----------ПЕРЕМЕННЫЕ---------------------------------------------------------
 var setup = document.querySelector('.setup');
