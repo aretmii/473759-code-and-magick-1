@@ -32,22 +32,22 @@ for (var i = 0; i < 4; i++) {
     return COAT_COLORS[randomColor];
   };
   // добавляем рандомный цвет плаща в объект
-  randomWizard.coat_Color = coatColor(0, 6);
+  randomWizard.coatColor = coatColor(0, 6);
   // выбираем цвет глаз
   var eyesColor = function getRandomEyeColor(min, max) {
     var randomEyeColor = Math.floor(Math.random() * (max - min)) + min;
     return EYES_COLORS[randomEyeColor];
   };
   // добавляем рандомный цвет глаз в объект
-  randomWizard.eye_Color = eyesColor(0, 5);
+  randomWizard.eyeColor = eyesColor(0, 5);
   // добавляем объект в массив
   WIZARDS[i] = randomWizard;
   // копируем шаблон волшебника
   var wizardElement = similarWizardTemplate.cloneNode(true);
 
   wizardElement.querySelector('.setup-similar-label').textContent = WIZARDS[i].name;
-  wizardElement.querySelector('.wizard-coat').style.fill = WIZARDS[i].coat_Color;
-  wizardElement.querySelector('.wizard-eyes').style.fill = WIZARDS[i].eye_Color;
+  wizardElement.querySelector('.wizard-coat').style.fill = WIZARDS[i].coatColor;
+  wizardElement.querySelector('.wizard-eyes').style.fill = WIZARDS[i].eyeColor;
 
   similarListElement.appendChild(wizardElement);
 }
